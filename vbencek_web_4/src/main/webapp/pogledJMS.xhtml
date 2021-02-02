@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./predlozak.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="naslov">
+        #{p['pogledJMS.naslov']}
+    </ui:define>
+
+    <ui:define name="content">
+        <h2 align="center" style="font-family: monospace; font-size: 25px">#{p['pogledJMS.naslov']}</h2>
+        <h:form style="position: relative;left: 95%">
+            <p:commandButton onclick= "window.location = 'prijava.xhtml';" value="#{p['predlozak.izbornikOdjava']}" action="#{prijava.odjaviKorisnika()}"/>
+            <h:outputText styleClass="praznaLinija" value="&nbsp;"/>
+        </h:form>
+        
+        <h:form id="glavna">
+            <p:outputLabel value="#{pogledDrugi.ispisiKorisnika()}" styleClass="gumbPorKor"/><br/><br/>
+            <h:panelGroup id="grupa">
+                <p:dataTable value="#{pogledDrugi.dohvatiJMS1()}" var="a"                            
+                             rows="10" paginator="true" id="jms1"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records">
+
+                    <p:column>
+                        <f:facet name="header">ID</f:facet>
+                        #{pogledDrugi.vratiId(a)}
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">#{p['pogledJMS.korisnik']}</f:facet>#{pogledDrugi.vratiKor(a)}
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">#{p['pogledJMS.aerodrom']}</f:facet>#{pogledDrugi.vratiAer(a)}
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">#{p['pogledJMS.datum']}</f:facet>#{pogledDrugi.vratiVri(a)}
+                    </p:column>
+                </p:dataTable>
+                <p:commandButton value="#{p['pogledJMS.obrisi']}" action="#{pogledDrugi.obrisiJMS1()}" update="jms1"/>
+                
+                <p:dataTable value="#{pogledDrugi.dohvatiJMS2()}" var="a"                            
+                             rows="10" paginator="true" id="jms2"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records">
+
+                    <p:column>
+                        <f:facet name="header">ID</f:facet>
+                        #{pogledDrugi.vratiId(a)}
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">#{p['pogledJMS.korisnik']}</f:facet>#{pogledDrugi.vratiKor(a)}
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">#{p['pogledJMS.komanda']}</f:facet>#{pogledDrugi.vratiAer(a)}
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">#{p['pogledJMS.vrijemePrijema']}</f:facet>#{pogledDrugi.vratiVrijeme1(a)}
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">#{p['pogledJMS.vrijemeSlanja']}</f:facet>#{pogledDrugi.vratiVrijeme2(a)}
+                    </p:column>
+                </p:dataTable>
+                <p:commandButton value="#{p['pogledJMS.obrisi']}" action="#{pogledDrugi.obrisiJMS2()}" update="jms2"/>
+            </h:panelGroup>
+        </h:form>
+    </ui:define>
+
+</ui:composition>
+

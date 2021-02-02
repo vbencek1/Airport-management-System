@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>NWTIS konfiguracija</comment>
+<entry key="server.database">jdbc:derby://localhost:1527/</entry>
+<entry key="admin.username">nwtis_g2</entry>
+<entry key="admin.password">g2_nwtis</entry>
+<entry key="admin.database">nwtis_vbencek_bp_1</entry>
+<entry key="user.username">nwtis_g2</entry>
+<entry key="user.password">g2_nwtis</entry>
+<entry key="user.database">nwtis_vbencek_bp_1</entry>
+<entry key="jdbc.mysql">com.mysql.jdbc.Driver</entry>
+<entry key="jdbc.derby">org.apache.derby.jdbc.ClientDriver</entry>
+<entry key="LocationIQ.token">b8c18100d0ec93</entry>
+<entry key="OpenWeatherMap.apikey">fa6f54509df8c7a633438fcf223ad7ef</entry>
+<entry key="OpenSkyNetwork.korisnik">vbencek</entry>
+<entry key="OpenSkyNetwork.lozinka">12345678</entry>
+<entry key="preuzimanje.status">true</entry>
+<entry key="preuzimanje.pocetak">01.01.2020</entry>
+<entry key="preuzimanje.kraj">3.01.2020</entry>
+<entry key="preuzimanje.ciklus">60</entry>
+<entry key="preuzimanje.pauza">1000</entry>
+<entry key="posluzitelj.port">8003</entry>
+<entry key="posluzitelj.cekaci">5</entry>
+<entry key="dnevnik.zapisi">7</entry>
+<entry key="svn.korisnik">vbencek</entry>
+<entry key="svn.lozinka">1KITVn</entry>
+<entry key="dnevnik.zapisi">7</entry>
+<entry key="websocket.ciklus">30</entry>
+</properties>

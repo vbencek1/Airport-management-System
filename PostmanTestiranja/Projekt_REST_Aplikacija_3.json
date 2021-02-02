@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "9680f9a4-ce8a-4382-a09a-c937d5cf2bfe",
+		"name": "Projekt_REST_Aplikacija_3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "dajAerodromeKorisnika",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "korisnik",
+						"value": "mato",
+						"type": "text"
+					},
+					{
+						"key": "lozinka",
+						"value": "123456",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8084/vbencek_web_3/webresources/aerodromi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"vbencek_web_3",
+						"webresources",
+						"aerodromi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dodajKomandu",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "korisnik",
+						"type": "text",
+						"value": "ivo"
+					},
+					{
+						"key": "lozinka",
+						"type": "text",
+						"value": "123456"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8084/vbencek_web_3/webresources/aerodromi/komande?komanda=PAUZA&vrijeme=26.06.2020 15:12:22.333",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"vbencek_web_3",
+						"webresources",
+						"aerodromi",
+						"komande"
+					],
+					"query": [
+						{
+							"key": "komanda",
+							"value": "PAUZA"
+						},
+						{
+							"key": "vrijeme",
+							"value": "26.06.2020 15:12:22.333"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dajAerodromIzabraniKor",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "korisnik",
+						"type": "text",
+						"value": "pero"
+					},
+					{
+						"key": "lozinka",
+						"type": "text",
+						"value": "123456"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8084/vbencek_web_3/webresources/aerodromi/EBBR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"vbencek_web_3",
+						"webresources",
+						"aerodromi",
+						"EBBR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dajAerodromNaziv",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "korisnik",
+						"type": "text",
+						"value": "pero"
+					},
+					{
+						"key": "lozinka",
+						"type": "text",
+						"value": "123456"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8084/vbencek_web_3/webresources/aerodromi/svi?naziv=ira",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"vbencek_web_3",
+						"webresources",
+						"aerodromi",
+						"svi"
+					],
+					"query": [
+						{
+							"key": "naziv",
+							"value": "ira"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dajAerodromDrzava",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "korisnik",
+						"type": "text",
+						"value": "pero"
+					},
+					{
+						"key": "lozinka",
+						"type": "text",
+						"value": "123456"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8084/vbencek_web_3/webresources/aerodromi/svi?drzava=FR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"vbencek_web_3",
+						"webresources",
+						"aerodromi",
+						"svi"
+					],
+					"query": [
+						{
+							"key": "drzava",
+							"value": "FR"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dajAerodromNazivSvi",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "korisnik",
+						"type": "text",
+						"value": "pero"
+					},
+					{
+						"key": "lozinka",
+						"type": "text",
+						"value": "123456"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8084/vbencek_web_3/webresources/aerodromi/svi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"vbencek_web_3",
+						"webresources",
+						"aerodromi",
+						"svi"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obrisiAerodrom",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "korisnik",
+						"type": "text",
+						"value": "pero"
+					},
+					{
+						"key": "lozinka",
+						"type": "text",
+						"value": "123456"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8084/vbencek_web_3/webresources/aerodromi/EBBR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"vbencek_web_3",
+						"webresources",
+						"aerodromi",
+						"EBBR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obrisiAvione",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "korisnik",
+						"type": "text",
+						"value": "pero"
+					},
+					{
+						"key": "lozinka",
+						"type": "text",
+						"value": "123456"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8084/vbencek_web_3/webresources/aerodromi/EBBR/avioni",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"vbencek_web_3",
+						"webresources",
+						"aerodromi",
+						"EBBR",
+						"avioni"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

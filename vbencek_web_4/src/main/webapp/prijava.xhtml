@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./predlozak.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="naslov">
+        #{p['prijava.naslov']}
+    </ui:define>
+
+    <ui:define name="content">
+        <h2 align="center" style="font-family: monospace; font-size: 25px">#{p['prijava.naslov']}</h2>
+        <h:form>
+            <br/><br/>
+            <table align="center">
+                <tr>
+                    <th><p:outputLabel>#{p['prijava.korime']}</p:outputLabel></th>
+                    <th><p:inputText value="#{prijava.korIme}"/></th>
+                </tr>
+                <tr>
+                    <th><p:outputLabel>#{p['prijava.lozinka']}</p:outputLabel></th>
+                    <th><p:password  value="#{prijava.lozinka}"/></th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th align="right"><h:commandButton value=" #{p['prijava.prijaviSe']} " action="#{prijava.prijavaKorisnika()}"/></th>
+                    
+                </tr>
+            </table>
+            <br/>
+            <p:outputLabel value="#{prijava.porukaPrijave}" style="position: absolute; left: 60%"/>
+        </h:form>
+    </ui:define>
+
+</ui:composition>
+

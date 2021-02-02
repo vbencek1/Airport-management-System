@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "342dab60-7df6-4a5a-aa7f-2cc8ce522335",
+		"name": "Projekt_WS_Aplikacija_2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "provjeraKorisnika",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><S:Envelope xmlns:S=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <SOAP-ENV:Header/>\r\n    <S:Body xmlns:ns2=\"http://serveri.web.vbencek.nwtis.foi.org/\">\r\n        <ns2:provjeraKorisnika>\r\n            <korisnik>pero</korisnik>\r\n            <lozinka>123456</lozinka>\r\n        </ns2:provjeraKorisnika>\r\n    </S:Body>\r\n</S:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/vbencek_web_2/ProjektWS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"vbencek_web_2",
+						"ProjektWS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dohvatiAerodromeNaziv",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><S:Envelope xmlns:S=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <SOAP-ENV:Header/>\r\n    <S:Body xmlns:ns2=\"http://serveri.web.vbencek.nwtis.foi.org/\">\r\n        <ns2:dohvatiAerodromeNaziv>\r\n            <korisnik>pero</korisnik>\r\n            <lozinka>123456</lozinka>\r\n            <naziv>fran</naziv>\r\n        </ns2:dohvatiAerodromeNaziv>\r\n    </S:Body>\r\n</S:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/vbencek_web_2/ProjektWS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"vbencek_web_2",
+						"ProjektWS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dohvatiAerodromeDrzava",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><S:Envelope xmlns:S=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <SOAP-ENV:Header/>\r\n    <S:Body xmlns:ns2=\"http://serveri.web.vbencek.nwtis.foi.org/\">\r\n        <ns2:dohvatiAerodromeDrzava>\r\n            <korisnik>pero</korisnik>\r\n            <lozinka>123456</lozinka>\r\n            <drzava>FR</drzava>\r\n        </ns2:dohvatiAerodromeDrzava>\r\n    </S:Body>\r\n</S:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/vbencek_web_2/ProjektWS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"vbencek_web_2",
+						"ProjektWS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dohvatiAerodromeKorisnika",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><S:Envelope xmlns:S=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <SOAP-ENV:Header/>\r\n    <S:Body xmlns:ns2=\"http://serveri.web.vbencek.nwtis.foi.org/\">\r\n        <ns2:dohvatiAerodromeKorisnika>\r\n            <korisnik>mato</korisnik>\r\n            <lozinka>123456</lozinka>\r\n        </ns2:dohvatiAerodromeKorisnika>\r\n    </S:Body>\r\n</S:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/vbencek_web_2/ProjektWS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"vbencek_web_2",
+						"ProjektWS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "poletjeliAvioniAerodrom",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><S:Envelope xmlns:S=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <SOAP-ENV:Header/>\r\n    <S:Body xmlns:ns2=\"http://serveri.web.vbencek.nwtis.foi.org/\">\r\n        <ns2:poletjeliAvioniAerodrom>\r\n            <korisnik>pero</korisnik>\r\n            <lozinka>123456</lozinka>\r\n            <icao>LEBL</icao>\r\n            <odVremena>1587794318</odVremena>\r\n            <doVremena>1589002135</doVremena>\r\n        </ns2:poletjeliAvioniAerodrom>\r\n    </S:Body>\r\n</S:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/vbencek_web_2/ProjektWS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"vbencek_web_2",
+						"ProjektWS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letoviAviona",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><S:Envelope xmlns:S=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <SOAP-ENV:Header/>\r\n    <S:Body xmlns:ns2=\"http://serveri.web.vbencek.nwtis.foi.org/\">\r\n        <ns2:letoviAviona>\r\n            <korisnik>pero</korisnik>\r\n            <lozinka>123456</lozinka>\r\n            <icao24>39c425</icao24>\r\n            <odVremena>1587794318</odVremena>\r\n            <doVremena>1589002136</doVremena>\r\n        </ns2:letoviAviona>\r\n    </S:Body>\r\n</S:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/vbencek_web_2/ProjektWS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"vbencek_web_2",
+						"ProjektWS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "izracunajUdaljenostAerodroma",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><S:Envelope xmlns:S=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <SOAP-ENV:Header/>\r\n    <S:Body xmlns:ns2=\"http://serveri.web.vbencek.nwtis.foi.org/\">\r\n        <ns2:izracunajUdaljenostAerodroma>\r\n            <korisnik>pero</korisnik>\r\n            <lozinka>123456</lozinka>\r\n            <icao1>CYUL</icao1>\r\n            <icao2>EBBR</icao2>\r\n        </ns2:izracunajUdaljenostAerodroma>\r\n    </S:Body>\r\n</S:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/vbencek_web_2/ProjektWS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"vbencek_web_2",
+						"ProjektWS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dajBliskeAerodrome",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><S:Envelope xmlns:S=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <SOAP-ENV:Header/>\r\n    <S:Body xmlns:ns2=\"http://serveri.web.vbencek.nwtis.foi.org/\">\r\n        <ns2:dajBliskeAerodrome>\r\n            <korisnik>pero</korisnik>\r\n            <lozinka>123456</lozinka>\r\n            <icao>CYUL</icao>\r\n            <rasponOd>0</rasponOd>\r\n            <rasponDo>2000</rasponDo>\r\n        </ns2:dajBliskeAerodrome>\r\n    </S:Body>\r\n</S:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/vbencek_web_2/ProjektWS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"vbencek_web_2",
+						"ProjektWS"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

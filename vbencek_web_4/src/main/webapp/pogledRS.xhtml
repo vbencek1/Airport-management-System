@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./predlozak.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="naslov">
+        #{p['pogledRS.naslov']}
+    </ui:define>
+
+    <ui:define name="content">
+        <h2 align="center" style="font-family: monospace; font-size: 25px">#{p['pogledRS.naslov']}</h2>
+        <h:form style="position: relative;left: 95%">
+            <p:commandButton onclick= "window.location = 'prijava.xhtml';" value="#{p['predlozak.izbornikOdjava']}" action="#{prijava.odjaviKorisnika()}"/>
+            <h:outputText styleClass="praznaLinija" value="&nbsp;"/>
+        </h:form>
+
+        <h:form id="glavna">
+            <p:outputLabel value="#{pogledPeti.ispisiKorisnika()}" styleClass="gumbPorKor"/><br/><br/>
+            <h:panelGroup id="grupa">
+                <h:outputText value="#{p['pregledBaza.odaberiAer']}  "/>
+                <p:selectOneMenu id="aerodromi" value="#{pogledPeti.odabraniAerodrom}" >
+                    <f:selectItems value="#{pogledPeti.dajVlastiteAerodrome()}" var="a" itemLabel="#{a.icao} - #{a.naziv} - #{a.drzava}" itemValue="#{a.icao}"/>
+                </p:selectOneMenu> 
+                &nbsp;
+                <p:commandButton value="  #{p['pogledRS.obrisiAerodrom']} " action="#{pogledPeti.obrisiAerodrom()}" 
+                                         update="aerodromi brisanje"/>
+                &nbsp;
+                <p:commandButton value="  #{p['pogledRS.obrisiLetoveAerodroma']} " action="#{pogledPeti.obrisiLetoveAerodroma()}" 
+                                         update="aerodromi brisanje"/>&nbsp;
+                <p:outputLabel id="brisanje" value="#{pogledPeti.porukaBrisanja}"/>
+                </h:panelGroup>
+                <br/><br/>
+                
+                <p:outputLabel>#{p['pogledRS.raspon']}</p:outputLabel>&nbsp;
+                <p:outputLabel>Min</p:outputLabel>&nbsp;
+                <p:inputText value="#{pogledPeti.min}"/>&nbsp;
+                <p:outputLabel>Max</p:outputLabel>&nbsp;
+                <p:inputText value="#{pogledPeti.max}"/>&nbsp;
+                
+                <p:commandButton value="  #{p['pogledWS.pretraziRaspon']} " action="#{pogledPeti.pretraziAerodromeRaspon()}" 
+                                         update="aerodromiRaspon"/> &nbsp;
+                <p:selectOneListbox id="aerodromiRaspon" scrollHeight="300" style="width: 500px">
+                    <f:selectItems value="#{pogledPeti.aerodromiRaspon}" var="a" itemLabel="#{a.icao} - #{a.naziv} - #{a.drzava}" itemValue="#{a.icao}"/>
+                </p:selectOneListbox>
+                <br/><br/>
+                <p:outputLabel>#{p['pogledRS.oznakaAer']} 1:</p:outputLabel>&nbsp;
+                <p:inputText value="#{pogledPeti.icao1}"/>&nbsp;
+                <p:outputLabel>#{p['pogledRS.oznakaAer']} 2:</p:outputLabel>&nbsp;
+                <p:inputText value="#{pogledPeti.icao2}"/>&nbsp;
+                <p:commandButton value=" #{p['pogledRS.dajUdaljenost']} " action="#{pogledPeti.izracunajUdaljenost()}" 
+                                         update="udaljenost"/> &nbsp;
+                <p:outputLabel id="udaljenost" value="#{p['pogledRS.udaljenost']}: #{pogledPeti.udaljenost} Km"/>&nbsp;
+        </h:form>
+    </ui:define>
+
+</ui:composition>

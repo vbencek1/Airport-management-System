@@ -1,0 +1,19 @@
+{"id": 1, "korisnik": "testni", "komanda": "DODAJ", "vrijemePrijema": "28-06-2020 15:32:05.0887", "vrijemeSlanja": "28-06-2020 15:32:05.0951"}
+{"id": 1, "korisnik": "mato", "komanda": "STANJE", "vrijemePrijema": "29-06-2020 14:13:33.0904", "vrijemeSlanja": "29-06-2020 14:13:34.0061"}
+{"id": 1, "korisnik": "ivo", "komanda": "PAUZA", "vrijemePrijema": "26.06.2020 15:12:22.333", "vrijemeSlanja": "29-06-2020 17:29:12.0510"}
+{"id": 1, "korisnik": "mato", "komanda": "STANJE", "vrijemePrijema": "30-06-2020 12:48:07.0250", "vrijemeSlanja": "30-06-2020 12:48:07.0434"}
+{"id": 4, "korisnik": "hazard10", "komanda": "DODAJ", "vrijemePrijema": "01-07-2020 16:33:36.0560", "vrijemeSlanja": "01-07-2020 16:33:36.0569"}
+{"id": 5, "korisnik": "hazard10", "komanda": "STANJE", "vrijemePrijema": "01-07-2020 16:34:47.0063", "vrijemeSlanja": "01-07-2020 16:34:47.0071"}
+{"id": 6, "korisnik": "hazard10", "komanda": "PAUZA", "vrijemePrijema": "01-07-2020 16:34:51.0116", "vrijemeSlanja": "01-07-2020 16:34:51.0121"}
+{"id": 7, "korisnik": "hazard10", "komanda": "STANJE", "vrijemePrijema": "01-07-2020 16:34:52.0323", "vrijemeSlanja": "01-07-2020 16:34:52.0341"}
+{"id": 8, "korisnik": "hazard10", "komanda": "GRUPA PRIJAVI", "vrijemePrijema": "01-07-2020 16:35:04.0216", "vrijemeSlanja": "01-07-2020 16:35:04.0219"}
+{"id": 9, "korisnik": "hazard10", "komanda": "GRUPA AKTIVIRAJ", "vrijemePrijema": "01-07-2020 16:35:06.0868", "vrijemeSlanja": "01-07-2020 16:35:06.0877"}
+{"id": 10, "korisnik": "hazard10", "komanda": "GRUPA STANJE", "vrijemePrijema": "01-07-2020 16:35:08.0224", "vrijemeSlanja": "01-07-2020 16:35:08.0242"}
+{"id": 11, "korisnik": "hazard10", "komanda": "GRUPA BLOKIRAJ", "vrijemePrijema": "01-07-2020 16:35:10.0952", "vrijemeSlanja": "01-07-2020 16:35:10.0956"}
+{"id": 12, "korisnik": "hazard10", "komanda": "GRUPA STANJE", "vrijemePrijema": "01-07-2020 16:35:11.0927", "vrijemeSlanja": "01-07-2020 16:35:11.0951"}
+{"id": 13, "korisnik": "hazard10", "komanda": "GRUPA BLOKIRAJ", "vrijemePrijema": "01-07-2020 16:35:15.0643", "vrijemeSlanja": "01-07-2020 16:35:15.0651"}
+{"id": 14, "korisnik": "hazard10", "komanda": "GRUPA AERODROMI CYUL,EBBR", "vrijemePrijema": "01-07-2020 16:35:30.0835", "vrijemeSlanja": "01-07-2020 16:35:30.0848"}
+{"id": 15, "korisnik": "hazard10", "komanda": "GRUPA BLOKIRAJ", "vrijemePrijema": "01-07-2020 16:35:33.0581", "vrijemeSlanja": "01-07-2020 16:35:33.0600"}
+{"id": 16, "korisnik": "hazard10", "komanda": "GRUPA PRIJAVI", "vrijemePrijema": "01-07-2020 16:35:36.0602", "vrijemeSlanja": "01-07-2020 16:35:36.0607"}
+{"id": 17, "korisnik": "hazard10", "komanda": "GRUPA BLOKIRAJ", "vrijemePrijema": "01-07-2020 16:35:39.0820", "vrijemeSlanja": "01-07-2020 16:35:39.0825"}
+{"id": 18, "korisnik": "hazard10", "komanda": "GRUPA AERODROMI CYUL,EBBR", "vrijemePrijema": "01-07-2020 16:35:41.0570", "vrijemeSlanja": "01-07-2020 16:35:41.0576"}

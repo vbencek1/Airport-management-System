@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Pregled korisnika</title>
+        <h:outputStylesheet library="css" name="mojCss.css"/>
+    </h:head>
+    <h:body onload="#{upravljanjeKorisnicima.dohvatiKorisnike()}">
+        <h2 align="center" style="font-family: monospace; font-size: 25px">Pregled Korisnika</h2>
+        <h:form>
+            <p:linkButton value="Početna" href="../index.xhtml" styleClass="gumbStranice"/><br/>
+            <p:commandButton value="Odjava" action="#{upravljanjeKorisnicima.odjaviKorisnika()}" onclick= "window.location='prijava.xhtml';" styleClass="gumbStranice"/> <br/>
+            <p:outputLabel value="#{upravljanjeKorisnicima.ispisiKorisnika()}" styleClass="gumbPorKor"/><br/><br/>
+        </h:form>
+        <h:form>
+            <br/><br/>   
+            <p:dataTable value="#{upravljanjeKorisnicima.korisnici}" var="a" 
+                         rows="10" paginator="true"  
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink}  {PreviousPageLink}  {PageLinks}  {NextPageLink}"
+                         rowsPerPageTemplate="5,10,30,100">
+
+                <p:column>
+                    <f:facet name="header">Korisničko ime</f:facet>#{a.korIme}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Ime</f:facet>#{a.ime}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Prezime</f:facet>#{a.prezime}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Email adresa</f:facet>#{a.emailAdresa}
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

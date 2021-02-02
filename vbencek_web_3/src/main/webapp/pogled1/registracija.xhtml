@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Registracija</title>
+        <h:outputStylesheet library="css" name="mojCss.css"/>
+    </h:head>
+    <h:body>
+        <h2 align="center" style="font-family: monospace; font-size: 25px">Registracija korisnika</h2>
+        <h:form>
+            <p:linkButton value="Početna" href="../index.xhtml" styleClass="gumbStranice"/><br/>
+        </h:form>
+        <h:form>
+            <br/><br/>
+            <table align="center">
+                <tr>
+                    <th><p:outputLabel>Korisničko ime: </p:outputLabel></th>
+                    <th><p:inputText value="#{upravljanjeKorisnicima.novoKorIme}"/></th>
+                </tr>
+                <tr>
+                    <th><p:outputLabel>Ime: </p:outputLabel></th>              
+                    <th><p:inputText value="#{upravljanjeKorisnicima.novoIme}"/></th>
+                </tr>
+                <tr>
+                    <th><p:outputLabel>Prezime: </p:outputLabel></th>
+                    <th><p:inputText value="#{upravljanjeKorisnicima.novoPrezime}"/></th>
+                </tr>
+                <tr>
+                    <th><p:outputLabel>Lozinka: </p:outputLabel></th>
+                    <th><p:password  value="#{upravljanjeKorisnicima.novoLozinka}"/></th>
+                </tr>
+                <tr>
+                    <th><p:outputLabel>Email: </p:outputLabel></th>
+                    <th><p:inputText value="#{upravljanjeKorisnicima.novoEmail}"/></th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th><h:commandButton value=" Registriraj se " action="#{upravljanjeKorisnicima.registrirajKorisnika()}"/></th>
+                </tr>
+            </table>
+            <br/>
+
+
+            <p:outputLabel value="#{upravljanjeKorisnicima.porukaRegistracije}" style="position: absolute; left: 46%"/>
+        </h:form>
+    </h:body>
+</html>
+

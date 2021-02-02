@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://serveri.web.vbencek.nwtis.foi.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://serveri.web.vbencek.nwtis.foi.org/">
+
+<xs:element name="dajBliskeAerodrome" type="tns:dajBliskeAerodrome"/>
+
+<xs:element name="dajBliskeAerodromeResponse" type="tns:dajBliskeAerodromeResponse"/>
+
+<xs:element name="dohvatiAerodromeDrzava" type="tns:dohvatiAerodromeDrzava"/>
+
+<xs:element name="dohvatiAerodromeDrzavaResponse" type="tns:dohvatiAerodromeDrzavaResponse"/>
+
+<xs:element name="dohvatiAerodromeKorisnika" type="tns:dohvatiAerodromeKorisnika"/>
+
+<xs:element name="dohvatiAerodromeKorisnikaResponse" type="tns:dohvatiAerodromeKorisnikaResponse"/>
+
+<xs:element name="dohvatiAerodromeNaziv" type="tns:dohvatiAerodromeNaziv"/>
+
+<xs:element name="dohvatiAerodromeNazivResponse" type="tns:dohvatiAerodromeNazivResponse"/>
+
+<xs:element name="izracunajUdaljenostAerodroma" type="tns:izracunajUdaljenostAerodroma"/>
+
+<xs:element name="izracunajUdaljenostAerodromaResponse" type="tns:izracunajUdaljenostAerodromaResponse"/>
+
+<xs:element name="letoviAviona" type="tns:letoviAviona"/>
+
+<xs:element name="letoviAvionaResponse" type="tns:letoviAvionaResponse"/>
+
+<xs:element name="poletjeliAvioniAerodrom" type="tns:poletjeliAvioniAerodrom"/>
+
+<xs:element name="poletjeliAvioniAerodromResponse" type="tns:poletjeliAvioniAerodromResponse"/>
+
+<xs:element name="provjeraKorisnika" type="tns:provjeraKorisnika"/>
+
+<xs:element name="provjeraKorisnikaResponse" type="tns:provjeraKorisnikaResponse"/>
+
+<xs:complexType name="izracunajUdaljenostAerodroma">
+<xs:sequence>
+<xs:element name="korisnik" type="xs:string" minOccurs="0"/>
+<xs:element name="lozinka" type="xs:string" minOccurs="0"/>
+<xs:element name="icao1" type="xs:string" minOccurs="0"/>
+<xs:element name="icao2" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="izracunajUdaljenostAerodromaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dohvatiAerodromeKorisnika">
+<xs:sequence>
+<xs:element name="korisnik" type="xs:string" minOccurs="0"/>
+<xs:element name="lozinka" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dohvatiAerodromeKorisnikaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:aerodrom" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="aerodrom">
+<xs:sequence>
+<xs:element name="drzava" type="xs:string" minOccurs="0"/>
+<xs:element name="icao" type="xs:string" minOccurs="0"/>
+<xs:element name="lokacija" type="tns:lokacija" minOccurs="0"/>
+<xs:element name="naziv" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="lokacija">
+<xs:sequence>
+<xs:element name="latitude" type="xs:string" minOccurs="0"/>
+<xs:element name="longitude" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajBliskeAerodrome">
+<xs:sequence>
+<xs:element name="korisnik" type="xs:string" minOccurs="0"/>
+<xs:element name="lozinka" type="xs:string" minOccurs="0"/>
+<xs:element name="icao" type="xs:string" minOccurs="0"/>
+<xs:element name="rasponOd" type="xs:double"/>
+<xs:element name="rasponDo" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajBliskeAerodromeResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:aerodrom" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="letoviAviona">
+<xs:sequence>
+<xs:element name="korisnik" type="xs:string" minOccurs="0"/>
+<xs:element name="lozinka" type="xs:string" minOccurs="0"/>
+<xs:element name="icao24" type="xs:string" minOccurs="0"/>
+<xs:element name="odVremena" type="xs:long"/>
+<xs:element name="doVremena" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="letoviAvionaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:avionLeti" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="avionLeti">
+<xs:sequence>
+<xs:element name="arrivalAirportCandidatesCount" type="xs:int"/>
+<xs:element name="callsign" type="xs:string" minOccurs="0"/>
+<xs:element name="departureAirportCandidatesCount" type="xs:int"/>
+<xs:element name="estArrivalAirport" type="xs:string" minOccurs="0"/>
+<xs:element name="estArrivalAirportHorizDistance" type="xs:int"/>
+<xs:element name="estArrivalAirportVertDistance" type="xs:int"/>
+<xs:element name="estDepartureAirport" type="xs:string" minOccurs="0"/>
+<xs:element name="estDepartureAirportHorizDistance" type="xs:int"/>
+<xs:element name="estDepartureAirportVertDistance" type="xs:int"/>
+<xs:element name="firstSeen" type="xs:int"/>
+<xs:element name="icao24" type="xs:string" minOccurs="0"/>
+<xs:element name="lastSeen" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="provjeraKorisnika">
+<xs:sequence>
+<xs:element name="korisnik" type="xs:string" minOccurs="0"/>
+<xs:element name="lozinka" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="provjeraKorisnikaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dohvatiAerodromeNaziv">
+<xs:sequence>
+<xs:element name="korisnik" type="xs:string" minOccurs="0"/>
+<xs:element name="lozinka" type="xs:string" minOccurs="0"/>
+<xs:element name="naziv" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dohvatiAerodromeNazivResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:aerodrom" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dohvatiAerodromeDrzava">
+<xs:sequence>
+<xs:element name="korisnik" type="xs:string" minOccurs="0"/>
+<xs:element name="lozinka" type="xs:string" minOccurs="0"/>
+<xs:element name="drzava" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dohvatiAerodromeDrzavaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:aerodrom" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="poletjeliAvioniAerodrom">
+<xs:sequence>
+<xs:element name="korisnik" type="xs:string" minOccurs="0"/>
+<xs:element name="lozinka" type="xs:string" minOccurs="0"/>
+<xs:element name="icao" type="xs:string" minOccurs="0"/>
+<xs:element name="odVremena" type="xs:long"/>
+<xs:element name="doVremena" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="poletjeliAvioniAerodromResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:avionLeti" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

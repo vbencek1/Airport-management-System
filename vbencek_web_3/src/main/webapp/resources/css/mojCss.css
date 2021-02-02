@@ -1,0 +1,31 @@
+.gumbPocetna{
+    margin-bottom: 10px;
+    width: 12%;
+    position: absolute;
+    left:44%;
+    right: 56%;
+}
+
+.naslovPocetna{
+    font-family: fantasy;
+}
+table th{
+    text-align: left;
+    font-weight: normal;
+}
+
+.gumbStranice{
+    width: 7%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.gumbPorKor{
+    margin-left: 10px;
+}
+
+.odabirAerodromaDiv{
+    background-color: lightsteelblue;
+    width: 32%;
+    border: solid 1px gray;
+}

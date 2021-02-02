@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./predlozak.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="naslov">
+        #{p['pogledBaza.naslov']}
+    </ui:define>
+
+    <ui:define name="content">
+        <script>
+            var wsocket;
+            function connect() {
+                wsocket = new WebSocket("ws://localhost:8084/vbencek_web_2/aerodromiEP");
+                wsocket.onmessage = onMessage;
+                wsocket.onopen = onOpen;
+            }
+            function onMessage(evt) {
+                var brAer = evt.data;
+                document.getElementById("brojAerodromaPre").innerHTML = brAer;
+            }
+            function onOpen(evt) {
+                wsocket.send("");
+            };
+            window.addEventListener("load", connect, false);
+            function saljiDodaj(korisnik, aerodrom) {
+                var poruka = korisnik + ";" + aerodrom;
+                wsocket.send(poruka);
+            }
+
+        </script>
+        <h2 align="center" style="font-family: monospace; font-size: 25px">#{p['pogledBaza.naslov']}</h2>
+        <h:form style="position: relative;left: 95%">
+            <p:commandButton onclick= "window.location = 'prijava.xhtml';" value="#{p['predlozak.izbornikOdjava']}" action="#{prijava.odjaviKorisnika()}"/>
+            <h:outputText styleClass="praznaLinija" value="&nbsp;"/>
+        </h:form>
+
+        <h:form id="glavna">
+            <p:outputLabel value="#{pogledTreci.ispisiKorisnika()}" styleClass="gumbPorKor"/><br/><br/>
+            <h:panelGroup id="grupa">
+                <span style="font-size:15px">#{p['pogledBaza.brojAer']}</span>
+                <span id="brojAerodromaPre" style="font-size:15px">#{p['pogledBaza.cekanje']}</span>
+                <p:dataTable value="#{pogledTreci.prikaziAerodromeKorisnika()}" var="a"                            
+                             rows="10" paginator="true" id="aerodromi"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records">
+
+                    <p:column>
+                        <f:facet name="header">Ident</f:facet>#{a.ident.ident}
+                    </p:column>       
+                    <p:column>
+                        <f:facet name="header">#{p['pogledBaza.nazivAer']}</f:facet>#{a.ident.name}
+                    </p:column>  
+                    <p:column>
+                        <f:facet name="header">#{p['pregledBaza.drzavaAer']}</f:facet>#{a.ident.isoCountry}
+                    </p:column>  
+                    <p:column>
+                        <f:facet name="header">#{p['pregledBaza.korisnikAer']}</f:facet>#{pogledTreci.brojKorisnikaAerodroma(a.ident.ident)}
+                    </p:column> 
+                    <p:column>
+                        <f:facet name="header">#{p['pregledBaza.daniAer']}</f:facet>#{pogledTreci.brojDatumaAerodroma(a.ident.ident)}
+                    </p:column> 
+                    <p:column>
+                        <f:facet name="header">#{p['pregledBaza.avioniAer']}</f:facet>#{pogledTreci.brojAvionaAerodroma(a.ident.ident)}
+                    </p:column> 
+                    <p:column>
+                        <p:commandButton value="  #{p['pogledBaza.geoMeteo']} " action="#{pogledTreci.preuzmiPodatkeAerodroma(a.ident.ident)}" 
+                                         update="glavna"/>
+                    </p:column>
+                </p:dataTable>  
+                <table>
+                    <tr>
+                        <th><h:outputLabel value="#{p['pregledBaza.gpsSirina']}: #{pogledTreci.NAsirina}"/></th>
+                        <th><h:outputLabel value="#{p['pregledBaza.gpsDuzina']}: #{pogledTreci.NAduzina}"/></th>
+                    </tr>
+                    <tr>
+                        <th><h:outputLabel value="#{p['pregledBaza.temp']}: #{pogledTreci.temp}"/></th>
+                        <th><h:outputLabel value="#{p['pregledBaza.vlaga']}: #{pogledTreci.vlaga}"/></th>
+                    </tr>
+                </table>
+            </h:panelGroup>
+        </h:form>
+
+        <h:form>
+            <br/>
+            <h:outputText value="#{p['pregledBaza.aerodrom']}:  "/>
+            <h:inputText value="#{pogledTreci.nazivAerodroma}" />
+            <p:commandButton value="  #{p['pregledBaza.filtriraj']} " action="#{pogledTreci.filtrirajAerodrome()}" 
+                             update="aer"/>
+            &nbsp;
+            <p:selectOneMenu id="aer" value="#{pogledTreci.aerodromZaDodat}" >&nbsp;&nbsp;
+                <f:selectItem itemLabel="#{p['pregledBaza.odaberiAer']}" itemValue="" itemDisabled="true"/>
+                <f:selectItems value="#{pogledTreci.airportsSvi}" var="a" itemLabel="#{a.ident} - #{a.name}" itemValue="#{a.ident}"/>
+            </p:selectOneMenu> &nbsp;
+            <p:commandButton value="  #{p['pogledBaza.dodajAer']} " action="#{pogledTreci.dodajAerodrom()}" 
+                             update="porDod :glavna:aerodromi"/>&nbsp;
+            <h:outputText id="porDod" value="#{pogledTreci.porukaDodavanja}"/>
+        </h:form>
+    </ui:define>
+
+</ui:composition>
+

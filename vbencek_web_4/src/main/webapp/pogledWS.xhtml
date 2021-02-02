@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./predlozak.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="naslov">
+        #{p['pogledWS.naslov']}
+    </ui:define>
+
+    <ui:define name="content">
+        <h2 align="center" style="font-family: monospace; font-size: 25px">#{p['pogledWS.naslov']}</h2>
+        <h:form style="position: relative;left: 95%">
+            <p:commandButton onclick= "window.location = 'prijava.xhtml';" value="#{p['predlozak.izbornikOdjava']}" action="#{prijava.odjaviKorisnika()}"/>
+            <h:outputText styleClass="praznaLinija" value="&nbsp;"/>
+        </h:form>
+
+        <h:form id="glavna">
+            <p:outputLabel value="#{pogledCetvrti.ispisiKorisnika()}" styleClass="gumbPorKor"/><br/><br/>
+            <h:panelGroup id="grupa">
+                <p:outputLabel> #{p['pogledWS.odDatuma']}</p:outputLabel>&nbsp;
+                <p:inputText value="#{pogledCetvrti.odDatuma}" placeholder="dd.MM.yyyy HH:mm"/>&nbsp;
+                <p:outputLabel> #{p['pogledWS.doDatuma']}</p:outputLabel>&nbsp;
+                <p:inputText value="#{pogledCetvrti.doDatuma}" placeholder="dd.MM.yyyy HH:mm"/>&nbsp;
+                <br/>
+                <p:dataTable value="#{pogledCetvrti.prikaziAerodromeKorisnika()}" var="a"                            
+                             rows="10" paginator="true" id="aerodromi"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records">
+
+                    <p:column>
+                        <f:facet name="header">Ident</f:facet>#{a.icao}
+                    </p:column>       
+                    <p:column>
+                        <f:facet name="header">#{p['pogledBaza.nazivAer']}</f:facet>#{a.naziv}
+                    </p:column>  
+                    <p:column>
+                        <f:facet name="header">#{p['pregledBaza.drzavaAer']}</f:facet>#{a.drzava}
+                    </p:column> 
+                    <p:column>
+                        <p:commandButton value="  #{p['pogledWS.prikaziAvione']} " action="#{pogledCetvrti.prikaziAvione(a.icao)}" 
+                                         update="glavna"/>
+                    </p:column>
+                </p:dataTable>
+                <br/>
+                <p:dataTable value="#{pogledCetvrti.prikaziAvioneAerodroma()}" var="avi"                            
+                             rows="10" paginator="true" id="avioni"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records">
+
+                    <p:column>
+                        <f:facet name="header">ICAO24</f:facet>#{avi.icao24}
+                    </p:column>       
+                    <p:column>
+                        <f:facet name="header">#{p['pogledWS.aerodromPolijetanja']}</f:facet>#{avi.estDepartureAirport}
+                    </p:column>  
+                    <p:column>
+                        <f:facet name="header">#{p['pogledWS.aerodromSlijetanja']}</f:facet>#{avi.estArrivalAirport}
+                    </p:column> 
+                    <p:column>
+                        <f:facet name="header">#{p['pogledWS.vrijemePolijetanja']}</f:facet>#{pogledCetvrti.pretvoriUDatum(avi.firstSeen)}
+                    </p:column> 
+                    <p:column>
+                        <f:facet name="header">#{p['pogledWS.vrijemeSlijetanja']}</f:facet>#{pogledCetvrti.pretvoriUDatum(avi.lastSeen)}
+                    </p:column> 
+                    <p:column>
+                        <p:commandButton value="  #{p['pogledWS.prikaziAvione']} " action="#{pogledCetvrti.prikaziLetove(avi.icao24)}" 
+                                         update="glavna"/>
+                    </p:column>
+                </p:dataTable>
+                <br/>
+                <p:dataTable value="#{pogledCetvrti.prikaziLetoveAviona()}" var="al"                            
+                             rows="10" paginator="true" id="avioniLet"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records">
+
+                    <p:column>
+                        <f:facet name="header">ICAO24</f:facet>#{al.icao24}
+                    </p:column>       
+                    <p:column>
+                        <f:facet name="header">#{p['pogledWS.aerodromPolijetanja']}</f:facet>#{al.estDepartureAirport}
+                    </p:column>  
+                    <p:column>
+                        <f:facet name="header">#{p['pogledWS.aerodromSlijetanja']}</f:facet>#{al.estArrivalAirport}
+                    </p:column> 
+                    <p:column>
+                        <f:facet name="header">#{p['pogledWS.vrijemePolijetanja']}</f:facet>#{pogledCetvrti.pretvoriUDatum(al.firstSeen)}
+                    </p:column> 
+                    <p:column>
+                        <f:facet name="header">#{p['pogledWS.vrijemeSlijetanja']}</f:facet>#{pogledCetvrti.pretvoriUDatum(al.lastSeen)}
+                    </p:column> 
+                </p:dataTable>
+            </h:panelGroup>
+        </h:form>
+    </ui:define>
+
+</ui:composition>
+

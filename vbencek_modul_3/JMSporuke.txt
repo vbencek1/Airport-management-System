@@ -1,0 +1,4 @@
+{"id": 1, "korisnik": "mato", "aerodrom": "EG-0005", "vrijeme": "29-06-2020 18:15:17.0301"} 
+{"id": 1, "korisnik": "mato", "aerodrom": "VCBI", "vrijeme": "30-06-2020 16:15:12.0499"} 
+{"id": 1, "korisnik": "vbencek", "aerodrom": "LIPX", "vrijeme": "01-07-2020 11:21:21.0073"} 
+{"id": 2, "korisnik": "pero", "aerodrom": "VTCC", "vrijeme": "01-07-2020 16:44:22.0428"} 

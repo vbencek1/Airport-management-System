@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Početna stranica</title>
+        <h:outputStylesheet library="css" name="mojCss.css"/>
+    </h:head>
+    <h:body>
+        <h2 align="center" style="font-family: monospace; font-size: 35px">Početna stranica</h2>
+        <h:form>
+                <p:linkButton value="Prijava" href="pogled1/prijava.xhtml" styleClass="gumbPocetna"/><br/>
+                <p:commandButton value="Odjava" action="#{glavna.odjaviKorisnika()}" styleClass="gumbPocetna"/><br/>
+                <p:linkButton value="Registracija" href="pogled1/registracija.xhtml" styleClass="gumbPocetna"/><br/>
+                <p:linkButton value="Pregled korisnika" href="pogled1/korisnici.xhtml" styleClass="gumbPocetna"/><br/>
+                <p:linkButton value="Upravljanje poslužiteljem" href="pogled2/stanjePosluzitelj.xhtml" styleClass="gumbPocetna"/><br/>
+                <p:linkButton value="Dnevnik Rada" href="pogled4/dnevnikRada.xhtml" styleClass="gumbPocetna"/><br/>
+        </h:form>
+
+    </h:body>
+</html>
+
