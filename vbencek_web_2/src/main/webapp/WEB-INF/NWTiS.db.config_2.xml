@@ -11,8 +11,8 @@
 <entry key="user.database">nwtis_vbencek_bp_1</entry>
 <entry key="jdbc.mysql">com.mysql.jdbc.Driver</entry>
 <entry key="jdbc.derby">org.apache.derby.jdbc.ClientDriver</entry>
-<entry key="LocationIQ.token">b8c18100d0ec93</entry>
-<entry key="OpenWeatherMap.apikey">fa6f54509df8c7a633438fcf223ad7ef</entry>
+<entry key="LocationIQ.token">yourKey</entry>
+<entry key="OpenWeatherMap.apikey">yourKey</entry>
 <entry key="OpenSkyNetwork.korisnik">vbencek</entry>
 <entry key="OpenSkyNetwork.lozinka">12345678</entry>
 <entry key="preuzimanje.status">true</entry>
